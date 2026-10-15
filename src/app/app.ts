@@ -1,5 +1,11 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject, signal } from '@angular/core';
+import {
+  Router,
+  RouterOutlet,
+  NavigationEnd,
+  ActivatedRouteSnapshot
+} from '@angular/router';
+import { filter } from 'rxjs';
 import { NavBar } from './components/nav-bar/nav-bar';
 
 @Component({
@@ -9,5 +15,25 @@ import { NavBar } from './components/nav-bar/nav-bar';
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('Blogy-app');
+  public router = inject(Router);
+  public showNavBar = signal(true);
+
+  constructor() {
+    this.router.events
+      .pipe(
+        filter((event) => event instanceof NavigationEnd)
+      )
+      .subscribe(() => {
+        let route: ActivatedRouteSnapshot =
+          this.router.routerState.snapshot.root;
+
+        while (route.firstChild) {
+          route = route.firstChild;
+        }
+
+        this.showNavBar.set(
+          route.routeConfig?.path !== '**'
+        );
+      });
+  }
 }

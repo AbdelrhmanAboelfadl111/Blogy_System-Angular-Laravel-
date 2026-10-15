@@ -47,5 +47,10 @@ export const routes: Routes = [
     path: 'dashboard/editPost/:id',
     loadComponent: () =>
       import('../app/pages/edit-post/edit-post').then(m => m.EditPost)
-  },
+  },{
+  path: '**',
+  loadComponent: () =>
+    import('../app/pages/not-found/not-found')
+      .then(m => m.NotFound)
+}
 ];
