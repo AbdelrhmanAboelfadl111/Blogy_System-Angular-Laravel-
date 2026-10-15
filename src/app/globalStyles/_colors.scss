@@ -1,0 +1,41 @@
+:root {
+    --main-gradient: radial-gradient(circle at 0% 0%, #ffd498, #ffe7c5); //NavBarUpper & mainBox & Footer
+
+    --second-gradient: radial-gradient(circle at 0% 0%, rgba(255, 212, 152, 0.26), #ffffff); //upperSideNavBar
+
+    --main-body_navBar: #fff9f0;
+
+    --third-gradient: radial-gradient(circle at 0% 0%, #ffd498, #ffe7c5); //mainBoxNavBar
+
+    --forth-gradient: linear-gradient(135deg, rgba(255, 238, 215, 0.26), #ffffff); // bodyBg
+
+    --main-Active_gradient: radial-gradient(circle at 50% 50%, #edc792, #ef971b);
+
+    --second-Active_gradient: radial-gradient(circle at 50% 50%, #ffecd2, #f69000);
+
+    --main-text_color: #000000;
+
+    --Active-text_color: #f38926;
+
+    --Bg-itemsNav:white;
+}
+
+.dark-mode {
+    --main-gradient: radial-gradient(circle at 50% 50%, #edc792, #ef971b); //NavBarUpper & mainBox & Footer
+
+    --second-gradient: radial-gradient(circle at 50% 50%, #edc792, #ef971b); //upperSideNavBar
+
+    --main-body_navBar: #3f4957; // bodyNavBar
+
+    --third-gradient: radial-gradient(circle at 50% 50%, #edc792, #ef971b); //mainBoxNavBar
+
+    --forth-gradient: #172228; // bodyBg
+
+    --main-Active_gradient: radial-gradient(circle at 50% 50%, #edc792, #ef971b);
+
+    --second-Active_gradient: radial-gradient(circle at 50% 50%, #ffecd2, #f69000);
+
+    --main-text_color: #000000;
+
+    --Active-text_color: white;
+}

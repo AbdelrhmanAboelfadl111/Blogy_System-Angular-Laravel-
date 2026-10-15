@@ -1,0 +1,36 @@
+@use "../../globalStyles/mixin" as *;
+@use "../../globalStyles/colors" as *;
+nav.navbar {
+  background-color: white !important;
+  padding: 15px;
+
+  .container {
+    ul {
+      @include flexCenter();
+      gap: 15px;
+
+      li {
+        cursor: pointer;
+        &.active {
+          background-color: #cfddfd;
+          border-radius: 5px;
+          padding: 2px 5px;
+
+          a {
+            color: blue !important;
+
+          }
+        }
+
+        a {}
+      }
+    }
+
+    .navbar-brand {
+      img {
+        width: 50px;
+        transform: translateY(-3px);
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+<section class="header py-3">
+  <div class="container d-flex justify-between">
+    <div class="text w-100">
+            <p class="postSpan">{{countOfCurrentPosts()}} Posts</p>
+      <h1>Dash Board</h1>
+      <p class="textBrief">Edit, Delete, Restore And <span style="color: red">Force Delete</span> Your <span
+          style="color: blue">Posts</span></p>
+      <ul>
+
+        <ul class="mt-2">
+          <li>
+            <a routerLink="/dashboard/posts" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+              All
+            </a>
+          </li>
+
+          <li>
+            <a routerLink="/dashboard/trashed" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+              Trashed
+            </a>
+          </li>
+
+          <li>
+            <a routerLink="/dashboard/published" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+              Published
+            </a>
+          </li>
+        </ul>
+
+
+      </ul>
+    </div>
+    <div routerLink="/dashboard/addPost" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="addPost w-100 d-flex justify-content-end align-items-center">
+      <a style="text-decoration: none">
+        <button class="btn btn-primary d-flex justify-center align-items-center"><i
+            class="fa-solid fa-plus d-flex justify-center align-items-center"></i>New Post</button>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<section class="main py-5">
+  <div class="container">
+
+    <div class="row">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</section>

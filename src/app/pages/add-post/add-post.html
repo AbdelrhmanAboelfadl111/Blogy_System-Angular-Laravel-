@@ -1,0 +1,40 @@
+<section class="header addPost py-5">
+  <div class="container d-flex justify-between">
+    <div class="text w-100">
+      <p class="postSpan">DashBoard</p>
+      <h1>Add New Post</h1>
+      <p class="textBrief">Fill in the details below and <span style="color: blue">publish</span> it to the home page.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="main py-5">
+  <div class="container">
+
+    <form method="POST" #postForm="ngForm" (ngSubmit)="submitAddPost(postForm)">
+      <div class="title">
+        <label for="Title" class="form-label">Title </label>
+        <input  name="Title" class="form-control " type="text" id="Title" placeholder="Title"
+          aria-label="Large input example" [(ngModel)]="postData.Title">
+      </div>
+      <div class="author_name">
+        <label  for="author_name" class="form-label">Author Name </label>
+        <input  name="author_name" class="form-control " type="text" id="author_name"
+          placeholder="Author Name" aria-label="Large input example" [(ngModel)]="postData.author_name">
+      </div>
+      <div class="description">
+        <label for="description" class="form-label">Description </label>
+        <textarea name="description" class="form-control resize-none" id="description"
+          rows="4" [(ngModel)]="postData.description"></textarea>
+      </div>
+      <div class="dashed w-100"></div>
+      <div class="operations">
+        <button class="btn btn-primary me-2" type="submit" >Add</button>
+        <a href="">
+          <button type="button" class="btn btn-danger">cancel</button>
+        </a>
+      </div>
+    </form>
+  </div>
+</section>

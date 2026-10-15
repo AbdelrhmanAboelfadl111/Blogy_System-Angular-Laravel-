@@ -1,0 +1,73 @@
+@use "../../globalStyles/mixin" as *;
+@use "../../globalStyles/colors" as *;
+
+
+section.header {
+  background-color: #f4f7ff;
+  border: 1px solid #e0e9fd;
+  border-inline: 0;
+
+  .container {
+    .text {
+      @include flexCenter();
+      flex-direction: column;
+      align-items: start;
+      gap: 10px;
+
+      p,
+      h2 {
+        margin-bottom: 0;
+      }
+
+      .postSpan {
+        background-color: #cfddfd;
+        color: blue !important;
+        padding: 5px;
+        border-radius: 5px;
+      }
+
+      .textBrief {
+        font-size: 18px;
+      }
+    }
+
+  }
+}
+
+.main {
+  .container {
+    @include flexCenter();
+
+    form {
+      width: 800px;
+
+      @include responsive(350) {
+        width: 100%;
+      }
+
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      border: 2px solid #d1d4fab8;
+      @include flexCenter();
+      flex-direction: column;
+      gap: 15px;
+
+      .dashed {
+        border: 1px dashed #d1d4fab8;
+      }
+
+      div {
+        width: 100%;
+
+        label {
+          font-size: 18px;
+        }
+
+        textarea {
+          resize: none;
+        }
+      }
+    }
+  }
+}

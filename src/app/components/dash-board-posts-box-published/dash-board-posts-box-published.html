@@ -1,0 +1,103 @@
+@if (isLoading()) {
+<!-- Loading -->
+<div class="col-12 d-flex justify-content-center align-items-center py-5">
+  <div class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+}
+@else if (postsData().length === 0) {
+<!-- Empty State -->
+<div class="col-12 d-flex justify-content-center align-items-center py-5">
+  <img src="assets/imgs/empty.png" alt="No posts found" class="img-fluid empty">
+</div>
+}
+@else {
+<!-- Posts -->
+@for (post of postsData(); track post.id) {
+<div class="col-12 mb-4">
+  <div class="itemBox">
+    <div class="box active">
+
+      @if (post.deleted_at != null) {
+      <div class="layerDeleted">In Trashed</div>
+      }
+
+      <div class="heading">
+        <h4 class="titlePost">{{ post.title }}</h4>
+      </div>
+
+      <div class="body">
+        <p class="titleBrief">{{ post.full_body }}</p>
+      </div>
+
+      <div class="span"></div>
+
+      <div class="info">
+        <div class="imgCon">
+          <h6 class="shortName">
+            {{ post.author_name_initials }}
+          </h6>
+
+          <div class="date">
+            <h6>{{ post.author_name }}</h6>
+            <p>{{ post.formatted_created_at }}</p>
+          </div>
+        </div>
+
+        @if (post.deleted_at != null) {
+        <div class="operations">
+          <a href="" class="btn btn-primary me-2">Restore</a>
+          <a href="" class="btn btn-danger">Force Delete</a>
+        </div>
+        }
+        @else {
+        <div class="operations">
+          <a [routerLink]="['/dashboard/editPost', post.id]" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+            class="btn btn-primary me-2">Edit</a>
+          <button type="button" class="btn btn-warning me-2" (click)="submitDeletePost(post.id)">
+            Delete
+          </button>
+          <a href="" class="btn btn-danger">Force Delete</a>
+        </div>
+        }
+
+      </div>
+    </div>
+  </div>
+</div>
+}
+
+<!-- Pagination -->
+<nav aria-label="Page navigation" class="d-flex justify-content-center align-items-center flex-column">
+
+  <ul class="pagination justify-content-center">
+
+    <li class="page-item" [class.disabled]="currentPage() === 1">
+      <button class="page-link" type="button" [disabled]="currentPage() === 1" (click)="getPosts(currentPage() - 1)">
+        &laquo;
+      </button>
+    </li>
+
+    @for (page of [].constructor(lastPage()); track $index) {
+    <li class="page-item" [class.active]="currentPage() === $index + 1">
+      <button class="page-link" type="button" (click)="getPosts($index + 1)">
+        {{ $index + 1 }}
+      </button>
+    </li>
+    }
+
+    <li class="page-item" [class.disabled]="currentPage() === lastPage()">
+      <button class="page-link" type="button" [disabled]="currentPage() === lastPage()"
+        (click)="getPosts(currentPage() + 1)">
+        &raquo;
+      </button>
+    </li>
+
+  </ul>
+
+  <span class="pb-4">
+    Page {{ currentPage() }} of {{ lastPage() }}
+  </span>
+</nav>
+}
