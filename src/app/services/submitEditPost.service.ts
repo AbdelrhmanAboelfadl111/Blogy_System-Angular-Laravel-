@@ -8,7 +8,7 @@ export class EditPostService {
 
   private http = inject(HttpClient);
 
-  private ApiUrl = 'http://127.0.0.1:8000/api/post/getPostEdit';
+  private ApiUrl = 'https://127.0.0.1:8000/api/post/getPostEdit';
 
   // Get post data
   public EditPostServiceMethod(postId: { id: number }) {

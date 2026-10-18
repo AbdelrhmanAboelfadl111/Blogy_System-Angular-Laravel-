@@ -10,7 +10,7 @@ export class DeletePostService {
 
   public deletePost(id: number) {
     return this.http.delete(
-      `http://127.0.0.1:8000/api/post/deletePost/${id}`
+      `https://127.0.0.1:8000/api/post/deletePost/${id}`
     );
   }
 }
