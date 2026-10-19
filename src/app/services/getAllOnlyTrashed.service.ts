@@ -8,7 +8,7 @@ export class GetAllOnlyTrashed {
 
     private http = inject(HttpClient);
 
-    private ApiUrl = 'http://blopy.atwebpages.com/api/post/getAllOnlyTrashed';
+    private ApiUrl = 'https://blogy.abdelrhmanabofadlqassim111.workers.dev/api/post/getAllOnlyTrashed';
 
     public getAllOnlyTrashed(page: number = 1) {
         return this.http.get<any>(`${this.ApiUrl}?page=${page}`);
