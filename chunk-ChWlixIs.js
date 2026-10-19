@@ -1,1 +1,0 @@
-import{C as H,fn as uI,wn as y}from"./chunk-C7ekeJeo.js";var n=class t{http=y(uI);deletePost(e){return this.http.delete(`http://127.0.0.1:8000/api/post/deletePost/${e}`)}static ɵfac=function(a){return new(a||t)};static ɵprov=H({token:t,factory:t.ɵfac,providedIn:`root`})};export{n as t};
