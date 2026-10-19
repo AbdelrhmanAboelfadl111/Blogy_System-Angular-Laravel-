@@ -8,7 +8,7 @@ export class EditPostService {
 
     private http = inject(HttpClient);
 
-    private ApiUrl = 'https://127.0.0.1:8000/api/post/getPostEdit';
+    private ApiUrl = 'http://blopy.atwebpages.com/api/post/getPostEdit';
 
     public EditPost(postId:any) {
         return this.http.post<any>(`${this.ApiUrl}`,postId);
