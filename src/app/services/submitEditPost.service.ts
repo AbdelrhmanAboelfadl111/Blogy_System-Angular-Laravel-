@@ -8,7 +8,7 @@ export class EditPostService {
 
   private http = inject(HttpClient);
 
-  private ApiUrl = 'http://blopy.atwebpages.com/api/post/getPostEdit';
+  private ApiUrl = 'https://blogy1.abdelrhmanabofadlqassim111.workers.dev/api/post/getPostEdit';
 
   // Get post data
   public EditPostServiceMethod(postId: { id: number }) {
@@ -25,7 +25,7 @@ export class EditPostService {
     }
   ) {
     return this.http.put(
-      `http://blopy.atwebpages.com/api/post/editPost/${id}`,
+      `https://blogy1.abdelrhmanabofadlqassim111.workers.dev/api/post/editPost/${id}`,
       postData
     );
   }

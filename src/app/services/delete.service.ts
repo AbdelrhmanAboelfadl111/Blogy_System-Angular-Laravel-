@@ -10,7 +10,7 @@ export class DeletePostService {
 
   public deletePost(id: number) {
     return this.http.delete(
-      `http://blopy.atwebpages.com/api/post/deletePost/${id}`
+      `https://blogy1.abdelrhmanabofadlqassim111.workers.dev/api/post/deletePost/${id}`
     );
   }
 }
