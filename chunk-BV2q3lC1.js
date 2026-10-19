@@ -1,0 +1,1 @@
+import{C as H,fn as uI,wn as y}from"./chunk-C7ekeJeo.js";var p=class t{http=y(uI);ApiUrl=`http://blopy.atwebpages.com/api/post/getAllOnlyTrashed`;getAllOnlyTrashed(e=1){return this.http.get(`${this.ApiUrl}?page=${e}`)}static ɵfac=function(n){return new(n||t)};static ɵprov=H({token:t,factory:t.ɵfac,providedIn:`root`})};export{p as t};
