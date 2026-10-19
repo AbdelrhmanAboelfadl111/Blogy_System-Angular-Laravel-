@@ -1,1 +1,0 @@
-import{C as H,fn as uI,wn as y}from"./chunk-C7ekeJeo.js";var n=class t{http=y(uI);ApiUrl=`https://blogy.abdelrhmanabofadlqassim111.workers.dev/api/post/getAllOnlyTrashed`;getAllOnlyTrashed(e=1){return this.http.get(`${this.ApiUrl}?page=${e}`)}static ɵfac=function(o){return new(o||t)};static ɵprov=H({token:t,factory:t.ɵfac,providedIn:`root`})};export{n as t};

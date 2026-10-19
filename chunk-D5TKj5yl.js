@@ -1,1 +1,0 @@
-import{C as H,fn as uI,wn as y}from"./chunk-C7ekeJeo.js";var i=class t{http=y(uI);deletePost(e){return this.http.delete(`https://blogy.abdelrhmanabofadlqassim111.workers.dev/api/post/deletePost/${e}`)}static ɵfac=function(n){return new(n||t)};static ɵprov=H({token:t,factory:t.ɵfac,providedIn:`root`})};export{i as t};
