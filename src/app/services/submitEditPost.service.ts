@@ -8,7 +8,7 @@ export class EditPostService {
 
   private http = inject(HttpClient);
 
-  private ApiUrl = 'http://blopy.atwebpages.com/post/getPostEdit';
+  private ApiUrl = 'http://blopy.atwebpages.com/api/post/getPostEdit';
 
   // Get post data
   public EditPostServiceMethod(postId: { id: number }) {
