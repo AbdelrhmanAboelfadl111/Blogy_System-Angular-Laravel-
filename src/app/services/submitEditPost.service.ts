@@ -25,7 +25,7 @@ export class EditPostService {
     }
   ) {
     return this.http.put(
-      `http://127.0.0.1:8000/api/post/editPost/${id}`,
+      `http://blopy.atwebpages.com/api/post/editPost/${id}`,
       postData
     );
   }
