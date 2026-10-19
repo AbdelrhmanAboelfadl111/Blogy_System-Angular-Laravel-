@@ -8,7 +8,7 @@ export class RestoreForceDeleteService {
 
   private http = inject(HttpClient);
 
-  private ApiUrl = 'https://blogy.abdelrhmanabofadlqassim111.workers.dev/api/post';
+  private ApiUrl = 'http://blopy.atwebpages.com/api/post';
 
   // Restore post
   public restorePost(id: number) {

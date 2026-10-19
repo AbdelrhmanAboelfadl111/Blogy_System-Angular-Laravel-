@@ -8,7 +8,7 @@ export class GetAllPosts {
 
     private http = inject(HttpClient);
 
-    private ApiUrl = 'https://blogy.abdelrhmanabofadlqassim111.workers.dev/api/post/getAllWithoutTrashed';
+    private ApiUrl = 'http://blopy.atwebpages.com/api/post/getAllWithoutTrashed';
 
     public getAllPosts(page: number = 1) {
         return this.http.get<any>(`${this.ApiUrl}?page=${page}`);
